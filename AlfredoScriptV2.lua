@@ -1,6 +1,6 @@
 
 function start()
-cd = gg.multiChoice({'[Lobby] Exynos Color and WallHack','[Landed] Aimlock','[Landed]Auto Headshot','[Landed] WallShot','[Lobby] No Recoil','[Landed] Fix No Recoil','[Landed] Super Run Speed','[Landed] High Jump','EXIT'},nil,"Alfredo's Script V2 by Emlin")
+cd = gg.multiChoice({'[Lobby] Exynos Color and WallHack','[Landed] Aimlock','[Landed]Auto Headshot','[Landed] WallShot','[Lobby] No Recoil','[Landed] Fix No Recoil','[Landed] Super Run Speed','[Landed] High Jump','EXIT'},nil,"Alfredo's Script V2.01 by Emlin")
 
 if cd == nil then else
 if cd[1]== true then ColorAndWallHackExy() end
@@ -32,7 +32,13 @@ gg.setRanges(gg.REGION_C_ALLOC)
 gg.searchNumber('"0.5;2.8025969e-45;192D;4D;2D;224D;14D;5D;-1D"', gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
 gg.processResume()
 gg.refineNumber('"0.5"', gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
-gg.toast("The Values got Placed into Search Results.")
+local t = gg.getResults(2)
+for i, v in ipairs(t) do
+ 	t[2].value = '1'
+ 	t[2].freeze = true
+ end
+gg.addListItems(t)
+gg.toast("Matrix.")
 end
 
 
