@@ -2,8 +2,8 @@
 function start()
 cd = gg.multiChoice({'[Lobby] Exynos Color and WallHack','[Landed] Aimlock','[Landed] Auto Headshot','[Landed] WallShot','[Lobby] No Recoil','[Landed] Fix No Recoil','[Landed] Super Run Speed','[Landed] High Jump','[Landed] High View','EXIT'},nil,"Alfredo's Script V2.01 by Emlin")
 
-if cd == nil then else
-if cd[1]== true then ColorAndWallHackExy() end
+if cd == nil then gg.sleep(200) else
+if cd[1]==true then ColorAndWallHackExy() end
 if cd[2]==true then Aimlock() end
 if cd[3]==true then Headshot() end
 if cd[4]==true then WallShot() end
@@ -184,4 +184,14 @@ if gg.isVisible(true) then
 gg.setVisible(false)
 end
 start()
+
+
+while(true)
+do
+  if gg.isVisible(true) then
+    gg.setVisible(false)
+    start()
+  end 
+  gg.clearResults()
+end
 
