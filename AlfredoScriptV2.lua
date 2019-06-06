@@ -38,6 +38,7 @@ for i, v in ipairs(t) do
  	t[2].freeze = true
  end
 gg.addListItems(t)
+gg.clearResults()
 gg.toast("Matrix.")
 end
 
