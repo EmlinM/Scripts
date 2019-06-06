@@ -1,6 +1,6 @@
 
 function start()
-cd = gg.multiChoice({'[Lobby] Exynos Color and WallHack','[Landed] Aimlock','[Landed]Auto Headshot','[Landed] WallShot','[Lobby] No Recoil','[Landed] Fix No Recoil','[Landed] Super Run Speed','[Landed] High Jump','EXIT'},nil,"Alfredo's Script V2.01 by Emlin")
+cd = gg.multiChoice({'[Lobby] Exynos Color and WallHack','[Landed] Aimlock','[Landed] Auto Headshot','[Landed] WallShot','[Lobby] No Recoil','[Landed] Fix No Recoil','[Landed] Super Run Speed','[Landed] High Jump','[Landed] High View','EXIT'},nil,"Alfredo's Script V2.01 by Emlin")
 
 if cd == nil then else
 if cd[1]== true then ColorAndWallHackExy() end
@@ -11,7 +11,8 @@ if cd[5]==true then NoRecoil() end
 if cd[6]==true then NoRecoilFix() end
 if cd[7]==true then SuperRunSpeed() end
 if cd[8]==true then HighJump() end
-if cd[9]==true then os.exit() end
+if cd[9]==true then HighView() end
+if cd[10]==true then os.exit() end
 DEFAULT=-1
 end
 end
@@ -161,6 +162,17 @@ gg.toast("You must participate in the Olympics.")
 gg.clearResults()
 end
 
+function HighView()
+gg.clearResults()
+gg.setRanges(gg.REGION_ANONYMOUS)
+gg.clearResults()
+gg.searchNumber("220;178;15 ", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
+gg.searchNumber("220", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
+gg.getResults(300)
+gg.editAll("438", gg.TYPE_FLOAT)
+gg.clearResults()
+gg.toast("What is it like up there?")
+end
 
 gg.toast('Subscribe to Emlin')
 print('For Alfredo') 
