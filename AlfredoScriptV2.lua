@@ -25,12 +25,12 @@ gg.searchNumber('"32;16;40;48;2:45"', gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1
 gg.processResume()
 gg.refineNumber('"40"', gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
 gg.processResume()
-local v = gg.getResults(4)
-for i, v in ipairs(v) do
- 	t[2].value = '73'
- 	t[2].freeze = false
+local u = gg.getResults(4)
+for i, v in ipairs(u) do
+ 	u[2].value = '25'
+ 	u[2].freeze = true
  end
-gg.addListItems(t)
+gg.addListItems(u)
 gg.clearResults()
 gg.toast("Super Hot!")
 gg.clearResults()
@@ -199,4 +199,3 @@ do
   end 
   gg.clearResults()
 end
-
