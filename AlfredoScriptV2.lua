@@ -21,12 +21,17 @@ end
 function ColorAndWallHackExy()
 gg.clearResults()
 gg.setRanges(gg.REGION_C_ALLOC)
-gg.searchNumber('"40;32;16;2:37"', gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
+gg.searchNumber('"32;16;40;48;2:45"', gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
 gg.processResume()
 gg.refineNumber('"40"', gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
 gg.processResume()
-revert = gg.getResults(100, nil, nil, nil, nil, nil, nil, nil, nil)
-gg.editAll('"73"', gg.TYPE_DWORD)
+local v = gg.getResults(4)
+for i, v in ipairs(t) do
+ 	t[2].value = '73'
+ 	t[2].freeze = false
+ end
+gg.addListItems(t)
+gg.clearResults()
 gg.toast("Super Hot!")
 gg.clearResults()
 gg.setRanges(gg.REGION_C_ALLOC)
