@@ -26,7 +26,7 @@ gg.processResume()
 gg.refineNumber('"40"', gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
 gg.processResume()
 local v = gg.getResults(4)
-for i, v in ipairs(t) do
+for i, v in ipairs(v) do
  	t[2].value = '73'
  	t[2].freeze = false
  end
