@@ -22,12 +22,12 @@ end
 function WallHackExy()
 gg.clearResults()
 gg.setRanges(gg.REGION_C_ALLOC)
-gg.searchNumber('"1,056,964,608;784;2;5;208;4;13:253"', gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
+gg.searchNumber('"0.5F;784;2;5;208;4;13:253"', gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
 gg.processResume()
-gg.refineNumber('"1,056,964,608"', gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
+gg.refineNumber('"0.5"', gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1)
 local t = gg.getResults(2)
 for i, v in ipairs(t) do
- 	t[2].value = '1,065,353,216'
+ 	t[2].value = '1'
  	t[2].freeze = true
  end
 gg.addListItems(t)
