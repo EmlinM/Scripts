@@ -1,24 +1,42 @@
 
 function start()
-cd = gg.multiChoice({'[Lobby] Exynos Color and WallHack','[Landed] Aimlock','[Landed] Auto Headshot','[Landed] WallShot','[Lobby] No Recoil','[Landed] Fix No Recoil','[Landed] Super Run Speed','[Landed] High Jump','[Landed] High View','EXIT'},nil,"Alfredo's Script V2.03 by Emlin")
+cd = gg.multiChoice({'[Lobby] Exynos WallHack','[Lobby] Color','[Landed] Aimlock','[Landed] Auto Headshot','[Landed] WallShot','[Lobby] No Recoil','[Landed] Fix No Recoil','[Landed] Super Run Speed','[Landed] High Jump','[Landed] High View','EXIT'},nil,"Alfredo's Script V2.04 by Emlin")
 
 if cd == nil then gg.sleep(200) else
-if cd[1]==true then ColorAndWallHackExy() end
-if cd[2]==true then Aimlock() end
-if cd[3]==true then Headshot() end
-if cd[4]==true then WallShot() end
-if cd[5]==true then NoRecoil() end
-if cd[6]==true then NoRecoilFix() end
-if cd[7]==true then SuperRunSpeed() end
-if cd[8]==true then HighJump() end
-if cd[9]==true then HighView() end
-if cd[10]==true then os.exit() end
+if cd[1]==true then WallHackExy() end
+if cd[2]==true then Color() end
+if cd[3]==true then Aimlock() end
+if cd[4]==true then Headshot() end
+if cd[5]==true then WallShot() end
+if cd[6]==true then NoRecoil() end
+if cd[7]==true then NoRecoilFix() end
+if cd[8]==true then SuperRunSpeed() end
+if cd[9]==true then HighJump() end
+if cd[10]==true then HighView() end
+if cd[11]==true then os.exit() end
 DEFAULT=-1
 end
 end
 
 
-function ColorAndWallHackExy()
+function WallHackExy()
+gg.clearResults()
+gg.setRanges(gg.REGION_C_ALLOC)
+gg.searchNumber('"1,056,964,608;784;2;5;208;4;13:253"', gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
+gg.processResume()
+gg.refineNumber('"1,056,964,608"', gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
+local t = gg.getResults(2)
+for i, v in ipairs(t) do
+ 	t[2].value = '1,065,353,216'
+ 	t[2].freeze = true
+ end
+gg.addListItems(t)
+gg.clearResults()
+gg.toast("Matrix.")
+end
+
+
+function Color()
 gg.clearResults()
 gg.setRanges(gg.REGION_C_ALLOC)
 gg.searchNumber('"32;16;40;48;2:45"', gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
@@ -33,19 +51,6 @@ for i, v in ipairs(u) do
 gg.addListItems(u)
 gg.clearResults()
 gg.toast("Super Hot!")
-gg.clearResults()
-gg.setRanges(gg.REGION_C_ALLOC)
-gg.searchNumber('"1,056,964,608;784;2;5;208;4;13:253"', gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
-gg.processResume()
-gg.refineNumber('"1,056,964,608"', gg.TYPE_DWORD, false, gg.SIGN_EQUAL, 0, -1)
-local t = gg.getResults(2)
-for i, v in ipairs(t) do
- 	t[2].value = '1,065,353,216'
- 	t[2].freeze = true
- end
-gg.addListItems(t)
-gg.clearResults()
-gg.toast("Matrix.")
 end
 
 
